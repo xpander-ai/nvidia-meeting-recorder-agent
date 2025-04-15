@@ -1,0 +1,25 @@
+{
+  "agent_name": "AI Meeting Recorder Agent",
+  "tools": [
+    {
+      "interface": "xpanderai tools",
+      "internal_name": "XpanderMeetingManagementCreateRecordingBot",
+      "path": "/business/meeting/create_recorder"
+    },
+    {
+      "interface": "xpanderai tools",
+      "internal_name": "XpanderMeetingManagementCheckRecorderStatus",
+      "path": "/business/meeting/status/{recorder_id}"
+    },
+    {
+      "interface": "xpanderai tools",
+      "internal_name": "XpanderMessagingServiceSendEmailWithContent",
+      "path": "/messaging/send_email"
+    },
+    {
+      "interface": "google-calendar",
+      "internal_name": "CalendarEventManagementCreateEventInCalendarById",
+      "path": "/calendars/{calendarId}/events"
+    }
+  ]
+}
