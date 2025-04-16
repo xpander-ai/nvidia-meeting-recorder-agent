@@ -95,3 +95,4 @@ result, thread_id = meeting_agent.run(prompt=prompt, thread_id=user_thread_id)
 ## License
 
 This project uses the Xpander SDK which has its own licensing terms. Refer to the Xpander documentation for details.
+# nvidia-meeting-recorder-agent
