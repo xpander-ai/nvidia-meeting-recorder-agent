@@ -49,7 +49,7 @@ This blueprint showcases how NVIDIA NIM microservices can be easily integrated w
 ## Project Structure
 
 - `01-initialize-and-setup-agent.ipynb`: Detailed walkthrough for initializing and adding tools to the agent
-- `02-interact-and-execute-agent`: Detailed walkthroug for executing the agent to solve example use cases
+- `02-interact-and-execute-agent.ipynb`: Detailed walkthroug for executing the agent to solve example use cases
 - `agent_config.json`: Configuration file defining agent tools and capabilities
 - `images/`: Visual assets for the notebooks
 - `requirements.txt`: Required Python dependencies
