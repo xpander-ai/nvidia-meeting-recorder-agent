@@ -14,12 +14,8 @@
       "internal_name": "XpanderMessagingServiceSendEmailWithContent"
     },
     {
-      "interface": "google-calendar",
+      "interface": "google calendar",
       "internal_name": "CalendarEventManagementGetCalendarEventsById"
-    },
-    {
-      "interface": "google-calendar",
-      "internal_name": "CalendarListManagementGetUserCalendarListEntries"
     }
   ]
 }
