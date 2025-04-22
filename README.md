@@ -33,15 +33,20 @@ This blueprint showcases how NVIDIA NIM microservices can be easily integrated w
 ## Getting Started
 
 1. Clone this repository to your local machine
-2. Install the required dependencies:
+2. Create a `.env` file in the root directory with the following:
+   ```
+   XPANDER_API_KEY=
+   NVIDIA_NIM_API_KEY=
+   ```
+3. Install the required dependencies:
    ```bash
    pip install -r requirements.txt
    ```
-3. Run the `01-initialize-and-setup-agent.ipynb` notebook:
+4. Run the `01-initialize-and-setup-agent.ipynb` notebook:
    ```bash
    jupyter 01-initialize-and-setup-agent.ipynb
    ```
-4. Run the `02-interact-and-execute-agent.ipynb` notebook:
+5. Run the `02-interact-and-execute-agent.ipynb` notebook:
    ```bash
    jupyter 02-interact-and-execute-agent.ipynb
    ```
