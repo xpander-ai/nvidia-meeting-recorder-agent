@@ -19,7 +19,7 @@ xpander.ai is an AI Agent platform that accelerates developer experience for bui
 
 ## Overview
 
-Critical and important information often gets lost quickly in meetings. This AI Meeting Recorder Agent built with xpander.ai automates the meeting documentation workflow: recording conversations, generating transcripts, monitoring status in real-time, and delivering assets via email.
+Critical and important information often gets lost quickly in meetings. The AI Meeting Recorder Agent built with xpander.ai automates the meeting documentation workflow: setting up recording in meetings, recording conversations, generating transcripts, monitoring status in real-time, and delivering assets via email.
 
 This blueprint showcases how NVIDIA NIM microservices can be easily integrated with xpander.ai to build a powerful AI agent. Developers can use this blueprint as a starting point to incorporate NVIDIA AI into xpander workflow, or apply it to different use cases that combine xpander and NVIDIA NIM.
 
@@ -33,7 +33,7 @@ This blueprint showcases how NVIDIA NIM microservices can be easily integrated w
 ## Getting Started
 
 1. Clone this repository to your local machine
-2. Create a `.env` file in the root directory with the following:
+2. Create a `.env` file in the root directory with the following variable:
    ```
    XPANDER_API_KEY=
    NVIDIA_NIM_API_KEY=
@@ -54,11 +54,11 @@ This blueprint showcases how NVIDIA NIM microservices can be easily integrated w
 ## Project Structure
 
 - `01-initialize-and-setup-agent.ipynb`: Detailed walkthrough for initializing and adding tools to the agent
-- `02-interact-and-execute-agent.ipynb`: Detailed walkthroug for executing the agent to solve example use cases
+- `02-interact-and-execute-agent.ipynb`: Detailed walkthrough for executing the agent to solve example use cases
 - `agent_config.json`: Configuration file defining agent tools and capabilities
 - `images/`: Visual assets for the notebooks
 - `requirements.txt`: Required Python dependencies
-- `.env`: Required credentials to run this project
+
 
 ## Agent Capabilities
 
@@ -67,7 +67,7 @@ The Meeting Recorder Agent includes four primary tools:
 1. **Calendar Integration**: Checks scheduled meeting on Google Calendar
 2. **Create Recording Bot**: Schedules and initiates meeting recordings
 3. **Check Recorder Status**: Monitors recording progress and retrieves assets
-4. **Send Email**: Delivers recordings and transcripts via email
+4. **Send Email**: Delivers recordings, transcripts, and summaries of the meeting via email
 
 ## Usage Examples
 
@@ -75,7 +75,8 @@ The Meeting Recorder Agent includes four primary tools:
 
 ```python
 prompt = """
-Please list my scheduled meetings for today.
+Please list my upcoming meetings for the next 3 days. 
+For each meeting, include the title, date, time, and participants if available.
 """
 result, thread_id = meeting_agent.run(prompt=prompt)
 ```
@@ -84,7 +85,7 @@ result, thread_id = meeting_agent.run(prompt=prompt)
 
 ```python
 prompt = """
-Can you record all the meetings scheduled for today?
+Can you record the onboarding meeting scheduled today? 
 """
 result, thread_id = meeting_agent.run(prompt=prompt, thread_id=user_thread_id)
 ```
@@ -107,4 +108,5 @@ result, thread_id = meeting_agent.run(prompt=prompt, thread_id=user_thread_id)
 ## License
 
 This project uses the Xpander SDK which has its own licensing terms. Refer to the Xpander documentation for details.
+
 # nvidia-meeting-recorder-agent
