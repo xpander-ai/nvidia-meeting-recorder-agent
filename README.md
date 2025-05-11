@@ -28,34 +28,31 @@ This blueprint showcases how NVIDIA NIM microservices can be easily integrated w
 
 - Xpander Cloud account with API access
 - Python 3.10+ environment
+- Node.js v22.15.0+
 - Google Calendar API access (for calendar integration)
 
 ## Getting Started
 
 1. Clone this repository to your local machine
-2. Create a `.env` file in the root directory with the following variable:
+2. Create a `.env` file in the root directory with the following variables:
    ```
    XPANDER_API_KEY=
    NVIDIA_NIM_API_KEY=
+   AGENT_ID=
    ```
 3. Install the required dependencies:
    ```bash
    pip install -r requirements.txt
    ```
-4. Run the `01-initialize-and-setup-agent.ipynb` notebook:
+4. Run the `nvidia-meeting-recorder-agent.ipynb` notebook:
    ```bash
-   jupyter 01-initialize-and-setup-agent.ipynb
+   jupyter nvidia-meeting-recorder-agent.ipynb
    ```
-5. Run the `02-interact-and-execute-agent.ipynb` notebook:
-   ```bash
-   jupyter 02-interact-and-execute-agent.ipynb
-   ```
+
 
 ## Project Structure
 
-- `01-initialize-and-setup-agent.ipynb`: Detailed walkthrough for initializing and adding tools to the agent
-- `02-interact-and-execute-agent.ipynb`: Detailed walkthrough for executing the agent to solve example use cases
-- `agent_config.json`: Configuration file defining agent tools and capabilities
+- `nvidia-meeting-recorder-agent.ipynb`: Detailed walkthrough for setting up and executing the agent to solve example use cases.
 - `images/`: Visual assets for the notebooks
 - `requirements.txt`: Required Python dependencies
 
