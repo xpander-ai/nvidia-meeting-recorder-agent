@@ -29,7 +29,6 @@ This blueprint showcases how NVIDIA NIM microservices can be easily integrated w
 - Xpander Cloud account with API access
 - Python 3.10+ environment
 - Node.js v22.15.0+
-- Google Calendar API access (for calendar integration)
 
 ## Getting Started
 
@@ -43,6 +42,10 @@ This blueprint showcases how NVIDIA NIM microservices can be easily integrated w
 3. Install the required dependencies:
    ```bash
    pip install -r requirements.txt
+   ```
+4. Install xpander CLI
+   ```bash
+   npm install -g xpander-cli
    ```
 4. Run the `nvidia-meeting-recorder-agent.ipynb` notebook:
    ```bash
