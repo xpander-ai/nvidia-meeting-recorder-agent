@@ -31,18 +31,10 @@ The agent uses a modular design based on:
 <div align="center">
   
   # Demo 1 
-  <video width="100%" controls>
-    <source src="https://assets.xpanderai.io/agents/agent/templates/meeting-recorder-demo.mp4" type="video/mp4">
-    Your browser does not support the video tag.
-  </video>
+  ![Meeting Recorder Demo](./videos/meeting-recorder.mp4)
 
-   # Demo 2
-
- <video width="100%" controls>
-    <source src="https://assets.xpanderai.io/agents/agent/templates/meeting-recorder-post-meeting.mp4" type="video/mp4">
-    Your browser does not support the video tag.
-  </video>
-
+  # Demo 2
+  ![Post Meeting Demo](./videos/post-meeting.mp4)
    
 </div>
 
