@@ -1,28 +1,43 @@
-# AI Meeting Recorder Agent
+# NVIDIA Meeting Recorder Agent
 
 <p align="center">
-  <img src="images/recorder.png" alt="AI Meeting Recorder" width="300">
+  <img src="https://assets.xpanderai.io/agents/agent/tamplates/meeting-recorder.png" alt="NVIDIA Meeting Recorder Agent" width="600">
 </p>
 
-An intelligent Jupyter notebook-based solution for automated meeting recording and transcription powered by the collaboration between Xpander AI platform and NVIDIA NIM.
-
-xpander.ai is an AI Agent platform that accelerates developer experience for building, testing and deploying AI agents. It allows developers to design AI Agent behaviors, and invoke them with an SDK. The platform handles the complex infrastructure needed for managing thousands of AI Agent to user interactions, maintaining complex AI agent states via the state machine, and orchestrating multi-step agent workflows.
-
-## Features
-
-- 🎙️ **Automated Meeting Recording**: Connect to online meetings and record them automatically
-- 📝 **Transcription**: Generate accurate text transcripts from recorded meetings
-- 📊 **Status Monitoring**: Track recording status in real-time
-- 📩 **Email Notifications**: Send meeting summaries and assets via email
-- 📅 **Calendar Integration**: Seamless Google Calendar integration for meeting scheduling
-- 💾 **Memory Persistence**: Maintain context across multiple interactions
+<div align="center">
+  <a href="https://app.xpander.ai/templates/48039a71-c99c-4691-8b66-a6faca3ccbe4" target="_blank">
+    <button style="background-color:#6741d9;color:white;padding:10px 20px;font-size:14px;border:none;border-radius:8px;cursor:pointer;">
+      Deploy NVIDIA Meeting Recorder to xpander.ai
+    </button>
+  </a>
+</div>
 
 ## Overview
 
-Critical and important information often gets lost quickly in meetings. The AI Meeting Recorder Agent built with xpander.ai automates the meeting documentation workflow: setting up recording in meetings, recording conversations, generating transcripts, monitoring status in real-time, and delivering assets via email.
+An autonomous AI Agent that records, transcribes, and summarizes meetings across Google Meet and Zoom. Integrated with Google Calendar, it joins scheduled calls, captures insights in real-time, and enables end-to-end meeting automation.
 
-This blueprint showcases how NVIDIA NIM microservices can be easily integrated with xpander.ai to build a powerful AI agent. Developers can use this blueprint as a starting point to incorporate NVIDIA AI into xpander workflow, or apply it to different use cases that combine xpander and NVIDIA NIM.
+Never miss critical information from your meetings again. The NVIDIA Meeting Recorder Agent automates the entire meeting documentation workflow: from scheduling and recording to transcription and delivery of meeting assets via email.
 
+This blueprint demonstrates the powerful integration between the Xpander AI platform and NVIDIA NIM microservices, providing developers with a production-ready starting point for creating intelligent meeting assistants.
+
+## Demo
+
+<p align="center">
+  <video width="600" controls>
+    <source src="https://assets.xpanderai.io/agents/agent/tamplates/meeting-recorder-demo.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
+</p>
+
+## Features
+
+- 🎙️ **Automated Meeting Recording**: Seamlessly joins Google Meet and Zoom calls
+- 📝 **Real-time Transcription**: Generates accurate text transcripts from meetings
+- 📊 **Live Status Monitoring**: Tracks recording status in real-time
+- 🧠 **Intelligent Summarization**: Creates concise meeting summaries
+- 📩 **Email Delivery**: Sends meeting assets (video, transcript, summary) via email
+- 📅 **Calendar Integration**: Connects with Google Calendar for meeting scheduling
+- 💾 **Persistent Memory**: Maintains context across multiple interactions
 
 ## Prerequisites
 
@@ -47,24 +62,25 @@ This blueprint showcases how NVIDIA NIM microservices can be easily integrated w
    ```bash
    npm install -g xpander-cli
    ```
-4. Run the `nvidia-meeting-recorder-agent.ipynb` notebook:
+5. Run the Jupyter notebook for a complete guide:
    ```bash
-   jupyter nvidia-meeting-recorder-agent.ipynb
+   jupyter notebook nvidia-meeting-recorder-agent.ipynb
    ```
 
+## Quick Start
+
+The fastest way to get started is to use our pre-built Xpander template. Just click the "Deploy to Xpander" button at the top of this README and follow the setup instructions.
 
 ## Project Structure
 
-- `nvidia-meeting-recorder-agent.ipynb`: Detailed walkthrough for setting up and executing the agent to solve example use cases.
-- `images/`: Visual assets for the notebooks
+- `nvidia-meeting-recorder-agent.ipynb`: Complete walkthrough and implementation guide
 - `requirements.txt`: Required Python dependencies
-
 
 ## Agent Capabilities
 
 The Meeting Recorder Agent includes four primary tools:
 
-1. **Calendar Integration**: Checks scheduled meeting on Google Calendar
+1. **Calendar Integration**: Checks scheduled meetings on Google Calendar
 2. **Create Recording Bot**: Schedules and initiates meeting recordings
 3. **Check Recorder Status**: Monitors recording progress and retrieves assets
 4. **Send Email**: Delivers recordings, transcripts, and summaries of the meeting via email
@@ -98,6 +114,10 @@ Please check the current status of the meeting recorder bot.
 """
 result, thread_id = meeting_agent.run(prompt=prompt, thread_id=user_thread_id)
 ```
+
+## Detailed Documentation
+
+For complete implementation details, usage examples, and customization options, refer to the [Jupyter notebook](./nvidia-meeting-recorder-agent.ipynb) included in this repository.
 
 ## Resources
 
