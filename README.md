@@ -31,10 +31,10 @@ The agent uses a modular design based on:
 <div align="center">
   
   # Demo 1 
-  ![Meeting Recorder Demo](./videos/meeting-recorder.mp4)
+  ![Meeting Recorder Demo](https://github.com/xpander-ai/nvidia-meeting-recorder-agent/blob/main/videos/meeting-recorder.mp4)
 
   # Demo 2
-  ![Post Meeting Demo](./videos/post-meeting.mp4)
+  ![Post Meeting Demo](https://github.com/xpander-ai/nvidia-meeting-recorder-agent/blob/main/videos/post-meeting.mp4)
    
 </div>
 
