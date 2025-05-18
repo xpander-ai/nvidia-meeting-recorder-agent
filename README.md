@@ -3,8 +3,8 @@
 <div align="center">
   <img src="https://assets.xpanderai.io/agents/agent/tamplates/meeting-recorder.png" alt="NVIDIA Meeting Recorder Agent" width="700">
 
-  <a href="https://app.xpander.ai/templates/48039a71-c99c-4691-8b66-a6faca3ccbe4"><img src="https://img.shields.io/badge/Deploy%20to-Xpander.ai-blue?style=for-the-badge&logo=appveyor" alt="Deploy to Xpander.ai"></a>
-  <a href="./nvidia-meeting-recorder-agent.ipynb"><img src="https://img.shields.io/badge/View-Documentation-green?style=for-the-badge&logo=read-the-docs" alt="View Jupyter Notebook"></a>
+  <a href="https://app.xpander.ai/templates/48039a71-c99c-4691-8b66-a6faca3ccbe4"><img src="https://img.shields.io/badge/Deploy%20to-Xpander.ai-6014FE?style=for-the-badge&logo=appveyor" alt="Deploy to xpander.ai"></a>
+  <a href="./nvidia-meeting-recorder-agent.ipynb"><img src="https://img.shields.io/badge/View%20Jupyter%20Notebook-6014FE?style=for-the-badge&logo=read-the-docs" alt="View Jupyter Notebook"></a>
 </div>
 
 ## Overview
@@ -30,11 +30,18 @@ The agent uses a modular design based on:
 
 <div align="center">
   
-  # Demo 1 
-  ![Meeting Recorder Demo](https://github.com/xpander-ai/nvidia-meeting-recorder-agent/blob/main/videos/meeting-recorder.mp4)
+  # Demo 1 (Ask the Agent to record meetings)
 
-  # Demo 2
-  ![Post Meeting Demo](https://github.com/xpander-ai/nvidia-meeting-recorder-agent/blob/main/videos/post-meeting.mp4)
+https://github.com/user-attachments/assets/5099acce-8327-451c-b0ee-fc3de2254feb
+
+
+  
+  # Demo 2 (Ask the Agent to summarize the meeting notes and email you the video + the meeting summary)
+  
+
+https://github.com/user-attachments/assets/da5649c8-4d58-44f1-82a5-5cdf2d4b8729
+
+
    
 </div>
 
@@ -176,11 +183,9 @@ For detailed development instructions and to access the full implementation, ref
 
 - [xpander.ai Documentation](https://docs.xpander.ai)
 - [NVIDIA NIM API](https://build.nvidia.com/)
-- [xpander.ai GitHub](https://github.com/xpander-ai/xpander)
+- [xpander.ai GitHub](https://github.com/xpander-ai/xpander.ai)
 - [xpander.ai Backend for Agents](https://app.xpander.ai)
 
 ## 📜 License
 
 This project uses the Xpander SDK which has its own licensing terms. Refer to the Xpander documentation for details.
-
-# nvidia-meeting-recorder-agent
