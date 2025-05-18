@@ -37,7 +37,7 @@ This blueprint showcases how NVIDIA NIM microservices can be easily integrated w
    ```
    XPANDER_API_KEY=
    NVIDIA_NIM_API_KEY=
-   AGENT_ID=
+   XPANDER_AGENT_ID=
    ```
 3. Install the required dependencies:
    ```bash
