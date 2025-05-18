@@ -1,131 +1,193 @@
-# NVIDIA Meeting Recorder Agent
-
-<p align="center">
-  <img src="https://assets.xpanderai.io/agents/agent/tamplates/meeting-recorder.png" alt="NVIDIA Meeting Recorder Agent" width="600">
-</p>
+# NVIDIA Meeting Recorder Agent 📹
 
 <div align="center">
-  <a href="https://app.xpander.ai/templates/48039a71-c99c-4691-8b66-a6faca3ccbe4" target="_blank">
-    <button style="background-color:#6741d9;color:white;padding:10px 20px;font-size:14px;border:none;border-radius:8px;cursor:pointer;">
-      Deploy NVIDIA Meeting Recorder to xpander.ai
-    </button>
-  </a>
+  <img src="https://assets.xpanderai.io/agents/agent/tamplates/meeting-recorder.png" alt="NVIDIA Meeting Recorder Agent" width="700">
+
+  <a href="https://app.xpander.ai/templates/48039a71-c99c-4691-8b66-a6faca3ccbe4"><img src="https://img.shields.io/badge/Deploy%20to-Xpander.ai-blue?style=for-the-badge&logo=appveyor" alt="Deploy to Xpander.ai"></a>
+  <a href="./nvidia-meeting-recorder-agent.ipynb"><img src="https://img.shields.io/badge/View-Documentation-green?style=for-the-badge&logo=read-the-docs" alt="View Jupyter Notebook"></a>
 </div>
 
 ## Overview
 
-An autonomous AI Agent that records, transcribes, and summarizes meetings across Google Meet and Zoom. Integrated with Google Calendar, it joins scheduled calls, captures insights in real-time, and enables end-to-end meeting automation.
+An open-source autonomous AI agent implementation built on xpander.ai, a complete backend for agents, and NVIDIA NIM. This reference architecture demonstrates how to build multi-step autonomous agents with persistent memory, tool orchestration, and state management using a low-abstraction approach.
 
-Never miss critical information from your meetings again. The NVIDIA Meeting Recorder Agent automates the entire meeting documentation workflow: from scheduling and recording to transcription and delivery of meeting assets via email.
+This implementation provides a foundation for building agents that can:
+- Access external APIs (Calendar, Meeting Services)
+- Execute complex multi-turn operations (Recording setup, asset retrieval)
+- Maintain state across interactions
+- Process and synthesize information from various sources
 
-This blueprint demonstrates the powerful integration between the Xpander AI platform and NVIDIA NIM microservices, providing developers with a production-ready starting point for creating intelligent meeting assistants.
+## Technical Architecture
 
-## Demo
+The agent uses a modular design based on:
+- **LLM**: NVIDIA NIM with llama-3.1-nemotron-ultra-253b-v1
+- **Foundation**: xpander.ai SDK for agent orchestration
+- **Tools**: Calendar, Recorder, Status, Email, each implemented as composable functions
+- **Memory**: Persistent thread-based context retention
+- **Session Management**: Dynamic session tracking for multi-step operations
 
-<p align="center">
-  <video width="600" controls>
-    <source src="https://assets.xpanderai.io/agents/agent/tamplates/meeting-recorder-demo.mp4" type="video/mp4">
+## Demo Videos
+
+<div align="center">
+  
+  # Demo 1 
+  <video width="100%" controls>
+    <source src="https://assets.xpanderai.io/agents/agent/templates/meeting-recorder-demo.mp4" type="video/mp4">
     Your browser does not support the video tag.
   </video>
-</p>
 
-## Features
+   # Demo 2
 
-- 🎙️ **Automated Meeting Recording**: Seamlessly joins Google Meet and Zoom calls
-- 📝 **Real-time Transcription**: Generates accurate text transcripts from meetings
-- 📊 **Live Status Monitoring**: Tracks recording status in real-time
-- 🧠 **Intelligent Summarization**: Creates concise meeting summaries
-- 📩 **Email Delivery**: Sends meeting assets (video, transcript, summary) via email
-- 📅 **Calendar Integration**: Connects with Google Calendar for meeting scheduling
-- 💾 **Persistent Memory**: Maintains context across multiple interactions
+ <video width="100%" controls>
+    <source src="https://assets.xpanderai.io/agents/agent/templates/meeting-recorder-post-meeting.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
 
-## Prerequisites
+   
+</div>
 
-- Xpander Cloud account with API access
-- Python 3.10+ environment
-- Node.js v22.15.0+
+## Core Components
 
-## Getting Started
+| Component | Implementation |
+|---------|-------------|
+| **Agent Wrapper** | Python class encapsulating LLM interaction and tool execution |
+| **Tool Registry** | Dynamically loads available tools from xpander.ai SDK |
+| **Session Management** | Thread-based state persistence |
+| **API Integration** | Calendar, meeting services and email connectors |
+| **Token Management** | Efficient token tracking and accounting |
+| **Error Handling** | Graceful degradation with error recovery |
 
-1. Clone this repository to your local machine
-2. Create a `.env` file in the root directory with the following variables:
-   ```
-   XPANDER_API_KEY=
-   NVIDIA_NIM_API_KEY=
-   XPANDER_AGENT_ID=
-   ```
-3. Install the required dependencies:
-   ```bash
-   pip install -r requirements.txt
-   ```
-4. Install xpander CLI
-   ```bash
-   npm install -g xpander-cli
-   ```
-5. Run the Jupyter notebook for a complete guide:
-   ```bash
-   jupyter notebook nvidia-meeting-recorder-agent.ipynb
-   ```
+## xpander.ai - Backend for Agents
 
-## Quick Start
+This agent is built on xpander.ai, a complete backend for agents that provides several key capabilities:
 
-The fastest way to get started is to use our pre-built Xpander template. Just click the "Deploy to Xpander" button at the top of this README and follow the setup instructions.
+- **Managed Agent Runtime**: Deploy and run any AI agent regardless of the framework used
+- **Tool Orchestration**: Comprehensive library of pre-built tools + ability to create custom tools
+- **State & Memory Management**: Persistent context across agent sessions and interactions
+- **Tracing & Observability**: Step-by-step execution analysis including model responses and API calls
+- **Flexible Model Support**: Use any LLM provider with your own keys or xpander.ai managed options
+- **A2A Communication**: Enable multiple agents to collaborate and pass context between each other
 
-## Project Structure
+As a backend for agents, xpander.ai handles the complex infrastructure needed for production-grade agent deployment, allowing developers to focus on agent logic and behaviors rather than backend concerns.
 
-- `nvidia-meeting-recorder-agent.ipynb`: Complete walkthrough and implementation guide
-- `requirements.txt`: Required Python dependencies
+## Quick Setup for Developers
 
-## Agent Capabilities
+```bash
+# Clone the repository
+git clone https://github.com/username/nvidia-meeting-recorder-agent.git
+cd nvidia-meeting-recorder-agent
 
-The Meeting Recorder Agent includes four primary tools:
+# Set up environment
+python -m venv .venv
+source .venv/bin/activate  # On Windows: .venv\Scripts\activate
+pip install -r requirements.txt
 
-1. **Calendar Integration**: Checks scheduled meetings on Google Calendar
-2. **Create Recording Bot**: Schedules and initiates meeting recordings
-3. **Check Recorder Status**: Monitors recording progress and retrieves assets
-4. **Send Email**: Delivers recordings, transcripts, and summaries of the meeting via email
+# Install xpander CLI
+npm install -g xpander-cli
+
+# Configure credentials
+echo "XPANDER_API_KEY=your_key" > .env
+echo "NVIDIA_NIM_API_KEY=your_key" >> .env
+echo "XPANDER_AGENT_ID=your_id" >> .env
+```
+
+## Implementation Details
+
+The core agent implementation is in `MeetingAgent` class which provides:
+
+```python
+class MeetingAgent:
+    """Wrapper around an xpander agent backed by NVIDIA NIM."""
+
+    MODEL = "nvidia/llama-3.1-nemotron-ultra-253b-v1"
+
+    def __init__(self, xpander_key: str, nim_key: str, agent_id: str):
+        self.client      = XpanderClient(api_key=xpander_key)
+        self.agent: Agent= self.client.agents.get(agent_id=agent_id)
+        self.agent.select_llm_provider(llm_provider=LLMProvider.NVIDIA_NIM)
+        self.llm         = OpenAI(base_url="https://integrate.api.nvidia.com/v1",
+                                  api_key=nim_key)
+```
+
+The agent executes a multi-step processing loop that:
+1. Processes user input
+2. Manages context (including time)
+3. Generates LLM responses
+4. Extracts and executes tool calls
+5. Updates state and returns results
 
 ## Usage Examples
 
-### List Upcoming Meetings
+### Calendar Integration
 
 ```python
-prompt = """
-Please list my upcoming meetings for the next 3 days. 
-For each meeting, include the title, date, time, and participants if available.
-"""
-result, thread_id = meeting_agent.run(prompt=prompt)
+# Get upcoming meetings
+result, thread_id = meeting_agent.run("List my upcoming meetings for the next 3 days")
 ```
 
-### Record a Meeting
+### Recording Control
 
 ```python
-prompt = """
-Can you record the onboarding meeting scheduled today? 
-"""
-result, thread_id = meeting_agent.run(prompt=prompt, thread_id=user_thread_id)
+# Start recording a specific meeting
+result, thread_id = meeting_agent.run(
+    "Create a recorder for the onboarding meeting",
+    thread_id=thread_id
+)
+
+# Check recording status
+result, thread_id = meeting_agent.run(
+    "Check the recorder status and give me the asset links",
+    thread_id=thread_id
+)
 ```
 
-### Check Recording Status
+### Email Delivery
 
 ```python
-prompt = """
-Please check the current status of the meeting recorder bot.
-"""
-result, thread_id = meeting_agent.run(prompt=prompt, thread_id=user_thread_id)
+# Email meeting assets with summary
+result, thread_id = meeting_agent.run(
+    "Email the video & transcript to team@example.com with a summary",
+    thread_id=thread_id
+)
 ```
 
-## Detailed Documentation
+## Building on Top of This Agent
 
-For complete implementation details, usage examples, and customization options, refer to the [Jupyter notebook](./nvidia-meeting-recorder-agent.ipynb) included in this repository.
+This implementation leverages key capabilities of xpander.ai as a backend for agents, making it ideal for extension:
+
+### Development Acceleration
+
+- **Visual Workbench**: Rapidly test and debug agent behavior through the xpander.ai Agent Workbench
+- **Tool Management**: Add custom tools or use pre-built tools from the library
+- **Framework Flexibility**: Switch between different LLM providers without code changes
+- **State Persistence**: Thread management across agent calls handled automatically
+
+### Production Integration
+
+- **Multi-endpoint Triggering**: Expose agents via API, Agent-to-Agent (A2A), or communication platforms
+- **Custom UI Integration**: Wrap agent with web UI, embed in existing applications, or integrate with Slack/Teams
+- **Observability**: Monitor execution paths, performance metrics, and error patterns
+- **Versioning & Lifecycle**: Deploy multiple versions and manage agent lifecycle
+
+### Customization Options
+
+1. **Additional Tools**: Extend the agent with new tools for different meeting platforms or data sources
+2. **UI Development**: Build custom interfaces on top of the agent API
+3. **Multi-agent Orchestration**: Connect multiple specialized agents working together
+4. **Domain Adaptation**: Customize the agent for specific industries or use cases
+
+## Development
+
+For detailed development instructions and to access the full implementation, refer to the [Jupyter notebook](./nvidia-meeting-recorder-agent.ipynb).
 
 ## Resources
 
-- [Xpander Documentation](https://docs.xpander.ai)
-- [Jupyter Notebooks](https://jupyter.org/)
+- [xpander.ai Documentation](https://docs.xpander.ai)
 - [NVIDIA NIM API](https://build.nvidia.com/)
+- [xpander.ai GitHub](https://github.com/xpander-ai/xpander)
+- [xpander.ai Backend for Agents](https://app.xpander.ai)
 
-## License
+## 📜 License
 
 This project uses the Xpander SDK which has its own licensing terms. Refer to the Xpander documentation for details.
 
