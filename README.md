@@ -73,7 +73,7 @@ As a backend for agents, xpander.ai handles the complex infrastructure needed fo
 
 ```bash
 # Clone the repository
-git clone https://github.com/username/nvidia-meeting-recorder-agent.git
+git clone https://github.com/xpander-ai/nvidia-meeting-recorder-agent.git
 cd nvidia-meeting-recorder-agent
 
 # Set up environment
